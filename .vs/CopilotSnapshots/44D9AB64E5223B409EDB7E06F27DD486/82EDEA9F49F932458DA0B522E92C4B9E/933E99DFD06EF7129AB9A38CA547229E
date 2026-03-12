@@ -1,0 +1,11 @@
+﻿using BlazorApp1.server.DbEntity;
+using Microsoft.EntityFrameworkCore;
+
+namespace BlazorApp1.server;
+
+public class AppDbContext : DbContext
+{
+    public DbSet<Game> Games { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlite("Data Source=app.db");
+}

@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\components\\pages\\gamelist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\gamelist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\server\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\server\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\server\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\server\\dbentity\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\server\\dbentity\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\panda\\source\\repos\\blazorapp1\\blazorapp1\\server\\dbentity\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48EFF821-2F4D-60CC-AA44-BE0F1D6E5F35}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\server\\dbentity\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Counter.razor",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Counter.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Counter.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T10:22:18.221Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameList.razor",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Pages\\GameList.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\GameList.razor",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Pages\\GameList.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\GameList.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T13:47:47.747Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\server\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\AppDbContext.cs",
+              "RelativeToolTip": "BlazorApp1\\server\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T13:25:33.131Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\GameService.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\server\\GameService.cs",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\GameService.cs",
+              "RelativeToolTip": "BlazorApp1\\server\\GameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T12:48:55.485Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwB4AAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-11T16:08:48.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\DbEntity\\Game.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\server\\DbEntity\\Game.cs",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\DbEntity\\Game.cs",
+              "RelativeToolTip": "BlazorApp1\\server\\DbEntity\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T13:41:33.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\DbEntity\\Platform.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\server\\DbEntity\\Platform.cs",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\server\\DbEntity\\Platform.cs",
+              "RelativeToolTip": "BlazorApp1\\server\\DbEntity\\Platform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T13:42:39.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\panda\\source\\repos\\BlazorApp1\\BlazorApp1\\Program.cs",
+              "RelativeToolTip": "BlazorApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T13:24:33.611Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
