@@ -6,7 +6,7 @@
 
 @inject GameService gameService
 
-<h1>Game List</h1>
+<h1>Game Backlog</h1>
 <br />
 <h2>Ajouter un jeu</h2>
 <table class="table param-table">
@@ -50,10 +50,10 @@
 <table class="table table-striped ">
     <thead>
         <tr>
-            <th>Titre</th>
-            <th>Plateforme</th>
-            <th>Completed</th>
-            <th>To do</th>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Title))">Titre @SortIndicator(nameof(Game.Title))</button></th>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Platform))">Plateforme @SortIndicator(nameof(Game.Platform))</button></th>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsCompleted))">Completed @SortIndicator(nameof(Game.IsCompleted))</button></th>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsTodo))">To do @SortIndicator(nameof(Game.IsTodo))</button></th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -82,6 +82,9 @@
 
     private List<Game> gameList = new();
 
+    private string? sortBy;
+    private bool sortDesc;
+
     private string newGameTitle = string.Empty;
     private Platform? newGamePlatform = Platform.PC;
 
@@ -104,7 +107,28 @@
 
     private void LoadGames()
     {
-        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter);
+        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter, sortBy: sortBy, descending: sortDesc);
+    }
+
+    private void ToggleSort(string column)
+    {
+        if (sortBy == column)
+        {
+            sortDesc = !sortDesc;
+        }
+        else
+        {
+            sortBy = column;
+            sortDesc = false;
+        }
+
+        LoadGames();
+    }
+
+    private MarkupString SortIndicator(string column)
+    {
+        if (sortBy != column) return (MarkupString)string.Empty;
+        return sortDesc ? (MarkupString)" \u25BC" : (MarkupString)" \u25B2";
     }
 
     private void AddGame()
