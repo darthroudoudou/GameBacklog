@@ -22,8 +22,9 @@
 </div>
 <br />
 <h2>Filtres</h2>
-<div>
-    <label>Plateforme :</label>
+<table class="table">
+    <tr>
+        <td> <label>Plateforme :</label>
     <select @bind="platformFilter" @bind:after="LoadGames">
         <option value="">ALL</option>
         @foreach (var platform in Enum.GetValues(typeof(Platform)))
@@ -31,23 +32,41 @@
             <option value="@platform">@platform</option>
         }
     </select>
-    <br />
-    To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
-
-</div>
-
-<ul>
-    @foreach (var item in gameList)
-    {
-        <li>
-            @item.Title
-            @item.Platform
-            <input name="Completed" type="checkbox" @bind="item.IsCompleted" @bind:after="@(() => this.UpdateGame(item))" /> Completed
-            <input name="To do" type="checkbox" @bind="item.IsTodo" @bind:after="@(() => this.UpdateGame(item))" /> To do
-            <button class="btn btn-primary" @onclick="@(() => this.DeleteGame(item.Id))">Supprimer</button>
-        </li>
-    }
-</ul>
+    </td>
+        <td>
+            To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
+		</td>
+    </tr>
+</table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Plateforme</th>
+            <th>Completed</th>
+            <th>To do</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in gameList)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Platform</td>
+                <td>
+                    <input name="Completed" type="checkbox" @bind="item.IsCompleted" @bind:after="@(() => this.UpdateGame(item))" />
+                </td>
+                <td>
+                    <input name="To do" type="checkbox" @bind="item.IsTodo" @bind:after="@(() => this.UpdateGame(item))" />
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" @onclick="@(() => this.DeleteGame(item.Id))">Supprimer</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 
 @code {
