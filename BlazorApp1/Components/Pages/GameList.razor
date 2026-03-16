@@ -9,36 +9,45 @@
 <h1>Game List</h1>
 <br />
 <h2>Ajouter un jeu</h2>
-<div>
-    <input @bind="newGameTitle" placeholder="Titre" />
-    <label>Plateforme :</label>
-    <select @bind="newGamePlatform">
-        @foreach (var platform in Enum.GetValues(typeof(Platform)))
-        {
-            <option value="@platform">@platform</option>
-        }
-    </select>
-    <button class="btn btn-primary" @onclick="AddGame">Ajouter</button>
-</div>
+<table class="table param-table">
+    <tr>
+        <td> 
+            <input @bind="newGameTitle" placeholder="Titre" />
+        </td>
+	    <td>
+            <label>Plateforme :</label>
+            <select @bind="newGamePlatform">
+                @foreach (var platform in Enum.GetValues(typeof(Platform)))
+                {
+                    <option value="@platform">@platform</option>
+                }
+            </select>
+        </td>
+        <td>
+            <button class="btn btn-primary" @onclick="AddGame">Ajouter</button>
+        </td>
+    </tr>
+</table>
 <br />
 <h2>Filtres</h2>
-<table class="table">
+<table class="table param-table">
     <tr>
-        <td> <label>Plateforme :</label>
-    <select @bind="platformFilter" @bind:after="LoadGames">
-        <option value="">ALL</option>
-        @foreach (var platform in Enum.GetValues(typeof(Platform)))
-        {
-            <option value="@platform">@platform</option>
-        }
-    </select>
-    </td>
+        <td> 
+            <label>Plateforme :</label>
+            <select @bind="platformFilter" @bind:after="LoadGames">
+                <option value="">ALL</option>
+                @foreach (var platform in Enum.GetValues(typeof(Platform)))
+                {
+                    <option value="@platform">@platform</option>
+                }
+            </select>
+        </td>
         <td>
             To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
 		</td>
     </tr>
 </table>
-<table class="table table-striped">
+<table class="table table-striped ">
     <thead>
         <tr>
             <th>Titre</th>
@@ -74,9 +83,9 @@
     private List<Game> gameList = new();
 
     private string newGameTitle = string.Empty;
-    private Platform? newGamePlatform = null;
+    private Platform? newGamePlatform = Platform.PC;
 
-    private Platform? platformFilter = Platform.PC;
+    private Platform? platformFilter;
     private bool isTodoFilter;
 
     private Platform? PlatformFilter

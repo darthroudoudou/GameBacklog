@@ -58,3 +58,17 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+/* Parameter table styling: left-aligned and limited to max 75% of available width */
+.param-table {
+    max-width: 50%;
+    width: 100%; /* allow table to shrink on small screens */
+    margin-left: 0;    /* align to left */
+    margin-right: auto; /* keep remaining space on the right */
+}
+
+@media (max-width: 576px) {
+    .param-table {
+        max-width: 100%; /* full width on very small screens */
+    }
+}
