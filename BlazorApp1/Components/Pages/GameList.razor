@@ -7,9 +7,10 @@
 @inject GameService gameService
 
 <h1>Game List</h1>
-
-<input @bind="newGameTitle" placeholder="Nouveau jeu" />
+<br />
+<h2>Ajouter un jeu</h2>
 <div>
+    <input @bind="newGameTitle" placeholder="Titre" />
     <label>Plateforme :</label>
     <select @bind="newGamePlatform">
         @foreach (var platform in Enum.GetValues(typeof(Platform)))
@@ -17,8 +18,23 @@
             <option value="@platform">@platform</option>
         }
     </select>
+    <button class="btn btn-primary" @onclick="AddGame">Ajouter</button>
 </div>
-<button class="btn btn-primary" @onclick="AddGame">Ajouter</button>
+<br />
+<h2>Filtres</h2>
+<div>
+    <label>Plateforme :</label>
+    <select @bind="platformFilter" @bind:after="LoadGames">
+        <option value="">ALL</option>
+        @foreach (var platform in Enum.GetValues(typeof(Platform)))
+        {
+            <option value="@platform">@platform</option>
+        }
+    </select>
+    <br />
+    To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
+
+</div>
 
 <ul>
     @foreach (var item in gameList)
@@ -26,8 +42,8 @@
         <li>
             @item.Title
             @item.Platform
-            <input name="Completed" type="checkbox" @bind="item.IsCompleted" @onclick="@(() => this.UpdateGame(item))" /> Completed
-            <input name="To do" type="checkbox" @bind="item.IsTodo" @onclick="@(() => this.UpdateGame(item))" /> To do
+            <input name="Completed" type="checkbox" @bind="item.IsCompleted" @bind:after="@(() => this.UpdateGame(item))" /> Completed
+            <input name="To do" type="checkbox" @bind="item.IsTodo" @bind:after="@(() => this.UpdateGame(item))" /> To do
             <button class="btn btn-primary" @onclick="@(() => this.DeleteGame(item.Id))">Supprimer</button>
         </li>
     }
@@ -37,9 +53,22 @@
 @code {
 
     private List<Game> gameList = new();
-    private string newGameTitle = string.Empty;
 
+    private string newGameTitle = string.Empty;
     private Platform? newGamePlatform = null;
+
+    private Platform? platformFilter;
+    private bool isTodoFilter;
+
+    private Platform? PlatformFilter
+    {
+        get => platformFilter;
+        set
+        {
+            platformFilter = value == null || value.ToString() == "" ? null : value;
+        }
+    }
+
     protected override void OnInitialized()
     {
         this.LoadGames();
@@ -47,7 +76,7 @@
 
     private void LoadGames()
     {
-        gameList = gameService.GetAllGames();
+        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter);
     }
 
     private void AddGame()

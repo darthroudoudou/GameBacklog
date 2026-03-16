@@ -4,27 +4,37 @@ namespace BlazorApp1.server;
 
 public class GameService
 {
-    private List<server.DbEntity.Game> Games = new();
-
-    private string newGameTitle = string.Empty;
+    private List<Game> Games = new();
 
     private readonly AppDbContext db;
 
     public GameService(AppDbContext appDbContext)
     {
         db = appDbContext;
-        Games = GetAllGames();
+        Games = RetrieveGames();
     }
 
-    public List<Game> GetAllGames()
+    public List<Game> RetrieveGames(bool isTodo = false, Platform? platform = null)
     {
-        return db.Games.ToList(); 
+        IQueryable<Game> query = db.Games;
+
+        if (isTodo == true)
+        {
+            query = query.Where(x => x.IsTodo);
+        }
+
+        if (platform != null)
+        {
+            query = query.Where(x => x.Platform == platform);
+        }
+
+        return query.ToList();
     }
 
     public void AddGame(Game newGame)
     {
         db.Games.Add(newGame);
-        db.SaveChanges(); 
+        db.SaveChanges();
     }
 
     public void UpdateGame(Game updatedGame)
@@ -41,12 +51,12 @@ public class GameService
             db.Games.Remove(item);
             db.SaveChanges();
         }
-        
+
     }
 
     public int GetNextId()
     {
-        this.Games = this.GetAllGames();
+        this.Games = this.RetrieveGames();
         if (Games.Count == 0)
             return 1;
         return Games.Max(g => g.Id) + 1;

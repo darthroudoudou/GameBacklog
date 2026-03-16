@@ -1,0 +1,23 @@
+# Ignore compiled object directories
+# Ignore all obj folders in the repository
+**/obj/
+obj/
+
+# Common additional ignores for .NET projects (optional)
+**/bin/
+bin/
+
+# Ignore Visual Studio temporary files
+.vs/
+*.user
+*.suo
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+
+# Ignore NuGet packages folder
+**/packages/
+
+# End of .gitignore
