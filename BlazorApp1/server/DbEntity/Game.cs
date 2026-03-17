@@ -4,6 +4,8 @@ public class Game
 {
     public int Id { get; set; }
 
+    public int? Order { get; set; }
+
     public string? Title { get; set; }
 
     public bool IsCompleted { get; set; }

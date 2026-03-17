@@ -50,6 +50,7 @@
 <table class="table table-striped ">
     <thead>
         <tr>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Order))">Order @SortIndicator(nameof(Game.Order))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Title))">Titre @SortIndicator(nameof(Game.Title))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Platform))">Plateforme @SortIndicator(nameof(Game.Platform))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsCompleted))">Completed @SortIndicator(nameof(Game.IsCompleted))</button></th>
@@ -61,6 +62,7 @@
         @foreach (var item in gameList)
         {
             <tr>
+                <td><input @bind="@item.Order" @bind:after="@(() => this.UpdateGame(item))" /></td>
                 <td>@item.Title</td>
                 <td>@item.Platform</td>
                 <td>
@@ -107,7 +109,7 @@
 
     private void LoadGames()
     {
-        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter, sortBy: sortBy, descending: sortDesc);
+        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter, sortBy: sortBy, isDescending: sortDesc);
     }
 
     private void ToggleSort(string column)

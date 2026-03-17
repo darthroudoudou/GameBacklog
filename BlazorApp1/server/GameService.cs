@@ -1,9 +1,8 @@
 ﻿using BlazorApp1.server.DbEntity;
-using System.Linq;
 
 namespace BlazorApp1.server;
 
-public class GameService
+public class GameService : IGameService
 {
     private List<Game> Games = new();
 
@@ -15,7 +14,7 @@ public class GameService
         Games = RetrieveGames();
     }
 
-    public List<Game> RetrieveGames(bool isTodo = false, Platform? platform = null, string? sortBy = null, bool descending = false)
+    public List<Game> RetrieveGames(bool isTodo = false, Platform? platform = null, string? sortBy = null, bool isDescending = false)
     {
         IQueryable<Game> query = db.Games;
 
@@ -35,16 +34,26 @@ public class GameService
             switch (sortBy.Trim().ToLowerInvariant())
             {
                 case "title":
-                    query = descending ? query.OrderByDescending(g => g.Title) : query.OrderBy(g => g.Title);
+                    query = isDescending ? query.OrderByDescending(g => g.Title) : query.OrderBy(g => g.Title);
                     break;
                 case "platform":
-                    query = descending ? query.OrderByDescending(g => g.Platform) : query.OrderBy(g => g.Platform);
+                    query = isDescending ? query.OrderByDescending(g => g.Platform) : query.OrderBy(g => g.Platform);
                     break;
                 case "iscompleted":
-                    query = descending ? query.OrderByDescending(g => g.IsCompleted) : query.OrderBy(g => g.IsCompleted);
+                    query = isDescending ? query.OrderByDescending(g => g.IsCompleted) : query.OrderBy(g => g.IsCompleted);
                     break;
                 case "istodo":
-                    query = descending ? query.OrderByDescending(g => g.IsTodo) : query.OrderBy(g => g.IsTodo);
+                    query = isDescending ? query.OrderByDescending(g => g.IsTodo) : query.OrderBy(g => g.IsTodo);
+                    break;
+                case "order":
+                    if (isDescending)
+                    {
+                        query = query.OrderBy(g => g.Order == null).ThenByDescending(g => g.Order);
+                    }
+                    else
+                    {
+                        query = query.OrderBy(g => g.Order == null).ThenBy(g => g.Order);
+                    }
                     break;
                 default:
                     break;
@@ -74,7 +83,6 @@ public class GameService
             db.Games.Remove(item);
             db.SaveChanges();
         }
-
     }
 
     public int GetNextId()
