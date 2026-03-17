@@ -20,4 +20,10 @@ bin/
 # Ignore NuGet packages folder
 **/packages/
 
+# Ignore database
+BlazorApp1/app.db
+BlazorApp1/app.db-shm
+BlazorApp1/app.db-wal
+
+
 # End of .gitignore
