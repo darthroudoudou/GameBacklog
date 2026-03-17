@@ -27,3 +27,4 @@ BlazorApp1/app.db-wal
 
 
 # End of .gitignore
+/BlazorApp1/appsettings.Development.json
