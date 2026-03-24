@@ -31,21 +31,24 @@
 <br />
 <h2>Filtres</h2>
 <table class="table param-table">
-    <tr>
-        <td> 
-            <label>Plateforme :</label>
-            <select @bind="platformFilter" @bind:after="LoadGames">
-                <option value="">ALL</option>
-                @foreach (var platform in Enum.GetValues(typeof(Platform)))
-                {
-                    <option value="@platform">@platform</option>
-                }
-            </select>
-        </td>
-        <td>
-            To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
+	<tr>
+		<td> 
+			<label>Plateforme :</label>
+			<select @bind="platformFilter" @bind:after="LoadGames">
+				<option value="">ALL</option>
+				@foreach (var platform in Enum.GetValues(typeof(Platform)))
+				{
+					<option value="@platform">@platform</option>
+				}
+			</select>
 		</td>
-    </tr>
+		<td>
+			To do : <input type="checkbox" @bind="isTodoFilter" @bind:after="LoadGames" />
+		</td>
+		<td>
+			Retro : <input type="checkbox" @bind="isRetroFilter" @bind:after="LoadGames" />
+		</td>
+	</tr>
 </table>
 <table class="table table-striped ">
     <thead>
@@ -53,6 +56,7 @@
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Order))">Order @SortIndicator(nameof(Game.Order))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Title))">Titre @SortIndicator(nameof(Game.Title))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.Platform))">Plateforme @SortIndicator(nameof(Game.Platform))</button></th>
+            <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsRetro))">Retro @SortIndicator(nameof(Game.IsRetro))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsCompleted))">Completed @SortIndicator(nameof(Game.IsCompleted))</button></th>
             <th><button class="btn btn-link p-0" @onclick="() => ToggleSort(nameof(Game.IsTodo))">To do @SortIndicator(nameof(Game.IsTodo))</button></th>
             <th>Actions</th>
@@ -65,6 +69,9 @@
                 <td><input @bind="@item.Order" @bind:after="@(() => this.UpdateGame(item))" /></td>
                 <td>@item.Title</td>
                 <td>@item.Platform</td>
+                <td>
+                    <input name="Retro" type="checkbox" @bind="item.IsRetro" @bind:after="@(() => this.UpdateGame(item))" />
+                </td>
                 <td>
                     <input name="Completed" type="checkbox" @bind="item.IsCompleted" @bind:after="@(() => this.UpdateGame(item))" />
                 </td>
@@ -92,6 +99,7 @@
 
     private Platform? platformFilter;
     private bool isTodoFilter;
+    private bool? isRetroFilter;
 
     private Platform? PlatformFilter
     {
@@ -109,7 +117,7 @@
 
     private void LoadGames()
     {
-        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter, sortBy: sortBy, isDescending: sortDesc);
+        gameList = gameService.RetrieveGames(isTodo: isTodoFilter, platform: this.PlatformFilter, sortBy: sortBy, isDescending: sortDesc, isRetro: isRetroFilter);
     }
 
     private void ToggleSort(string column)

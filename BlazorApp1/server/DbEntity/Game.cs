@@ -12,5 +12,7 @@ public class Game
 
     public bool IsTodo { get; set; }
 
+    public bool IsRetro { get; set; }
+
     public Platform Platform { get; set; }
 }

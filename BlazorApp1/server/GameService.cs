@@ -14,7 +14,7 @@ public class GameService : IGameService
         Games = RetrieveGames();
     }
 
-    public List<Game> RetrieveGames(bool isTodo = false, Platform? platform = null, string? sortBy = null, bool isDescending = false)
+    public List<Game> RetrieveGames(bool isTodo = false, Platform? platform = null, string? sortBy = null, bool isDescending = false, bool? isRetro = null)
     {
         IQueryable<Game> query = db.Games;
 
@@ -26,6 +26,11 @@ public class GameService : IGameService
         if (platform != null)
         {
             query = query.Where(x => x.Platform == platform);
+        }
+
+        if (isRetro != null)
+        {
+            query = query.Where(x => x.IsRetro == isRetro);
         }
 
         // Apply sorting
@@ -44,6 +49,9 @@ public class GameService : IGameService
                     break;
                 case "istodo":
                     query = isDescending ? query.OrderByDescending(g => g.IsTodo) : query.OrderBy(g => g.IsTodo);
+                    break;
+                case "isretro":
+                    query = isDescending ? query.OrderByDescending(g => g.IsRetro) : query.OrderBy(g => g.IsRetro);
                     break;
                 case "order":
                     if (isDescending)
